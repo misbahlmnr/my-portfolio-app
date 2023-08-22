@@ -28,12 +28,8 @@ const Portfolio = () => {
               </CardImagePortfolio>
               <SubtitleCardPortfolio>{data.title}</SubtitleCardPortfolio>
               <ButtonWrapper>
-                <ButtonCardPortfolio href={data.githubUrl} className="btn">
-                  <i className="uil uil-github"></i> Github
-                </ButtonCardPortfolio>
-
-                <ButtonCardPortfolio href={data.demoUrl} className="btn">
-                  Live Demo
+                <ButtonCardPortfolio href="" className="btn">
+                  Demo
                 </ButtonCardPortfolio>
               </ButtonWrapper>
             </CardPortfolio>

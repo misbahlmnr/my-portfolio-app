@@ -27,7 +27,7 @@ const Hero = () => (
         <ProfileSosmed>
           <MyButton
             className="btn"
-            href="https://drive.google.com/file/d/1stZISiZUQhScUsmp0qHYbVxgT03vyjKq/view?usp=share_link"
+            href="https://drive.google.com/file/d/1nCHkbgPFnjDY4EIysL4tcE3XF2BqfuSw/view?usp=drive_link"
           >
             <i className="uil uil-file-download"></i> MY CV
           </MyButton>

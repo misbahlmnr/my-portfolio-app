@@ -23,7 +23,7 @@ export const BoxContent = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   @media screen and (max-width: 678px) {
-    gap: 0;
+    gap: 15px;
   }
 `;
 
@@ -55,11 +55,11 @@ export const CardImagePortfolio = styled.div`
     transition: 0.6s;
   }
   img:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   @media screen and (max-width: 1024px) {
     height: 400px;
-    ransform: scale(1.2);
+    ransform: scale(1.1);
   }
   @media screen and (max-width: 678px) {
     height: 200px;
