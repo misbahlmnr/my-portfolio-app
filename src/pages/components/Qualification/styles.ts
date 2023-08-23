@@ -52,6 +52,7 @@ export const Button = styled.button`
   color: #012b52;
   font-size: 13px;
   margin-right: 30px;
+  outline: none;
   @media screen and (max-width: 678px) {
     width: 100%;
     margin-bottom: 10px;

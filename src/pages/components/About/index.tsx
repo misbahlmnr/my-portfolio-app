@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import imgAbout from "../../../resources/assets/img/me.jpg";
 import { MyButton } from "../../GlobalStyles";
 import {
@@ -35,23 +36,53 @@ const About = () => {
   return (
     <AboutWrapper id="about">
       <BoxContainer className="container">
-        <SectionTitle>About</SectionTitle>
+        <SectionTitle
+          as={motion.h2}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          About
+        </SectionTitle>
         <BoxContentAbout>
-          <BoxProfileImageAbout>
+          <BoxProfileImageAbout
+            as={motion.div}
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <img src={imgAbout} alt="about" />
           </BoxProfileImageAbout>
 
           <BoxProfileDescAbout>
             <BoxCardWrapper>
-              {datas.map((el) => (
-                <CardAbout key={el.title}>
+              {datas.map((el: any, idx: number) => (
+                <CardAbout
+                  key={el.title}
+                  as={motion.div}
+                  initial={{ opacity: 0, y: -20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: (0.9 * (idx + 1)) / datas.length,
+                    duration: 0.8,
+                  }}
+                  viewport={{ once: true }}
+                >
                   <div className="icon">{el.icon}</div>
                   <TitleCardAbout>{el.title}</TitleCardAbout>
                   <DescCardAbout>{el.description}</DescCardAbout>
                 </CardAbout>
               ))}
             </BoxCardWrapper>
-            <DescCardAbout>
+            <DescCardAbout
+              as={motion.p}
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               I am Misbah, a Frontend Developer with an educational background
               in Informatics Engineering. I love interface/UI work, and am
               always interested in finding the best solution in every project I
@@ -66,7 +97,15 @@ const About = () => {
               {"\n\n"}I believe that my abilities and experience can help me in
               working on future projects and work.{"\n\n"}
             </DescCardAbout>
-            <MyButton href="#contact" className="btn">
+            <MyButton
+              href="#contact"
+              className="btn"
+              as={motion.a}
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.5, duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               Message Me
             </MyButton>
           </BoxProfileDescAbout>

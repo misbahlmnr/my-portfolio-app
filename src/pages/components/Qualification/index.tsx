@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useContext, useState } from "react";
 import { StoreContext } from "../../../services/context/Context";
 import {
@@ -28,9 +29,23 @@ const Qualification = () => {
   return (
     <QualificationWrapper>
       <BoxContainer className="container">
-        <QualificationTitle>Qualification</QualificationTitle>
+        <QualificationTitle
+          as={motion.h2}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          Qualification
+        </QualificationTitle>
         <BoxContentQualification>
-          <ButtonWrapper>
+          <ButtonWrapper
+            as={motion.div}
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <Button
               id="education-formal"
               type="button"
@@ -69,7 +84,13 @@ const Qualification = () => {
               Work
             </Button>
           </ButtonWrapper>
-          <QualificationList>
+          <QualificationList
+            as={motion.div}
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             {chooseQualification.map((item: any, idx: number) => {
               const isFirstOrEven = idx === 0 || idx % 2 === 0;
               const isLast = idx === chooseQualification.length - 1;

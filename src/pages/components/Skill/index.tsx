@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useContext } from "react";
 import { StoreContext } from "../../../services/context/Context";
 import {
@@ -21,9 +22,23 @@ const Skills = () => {
   return (
     <SkillWrapper>
       <BoxContainer className="container">
-        <SKillTitle>Skills</SKillTitle>
+        <SKillTitle
+          as={motion.h2}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          Skills
+        </SKillTitle>
         <BoxContent>
-          <FrontendDetail>
+          <FrontendDetail
+            as={motion.div}
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <TitleCardDetailSkill>Frontend Development</TitleCardDetailSkill>
             <SkillWrap>
               {dataSkills.frontend.map((item: any, idx: number) => (
@@ -40,7 +55,13 @@ const Skills = () => {
             </SkillWrap>
           </FrontendDetail>
 
-          <BackendDetail>
+          <BackendDetail
+            as={motion.div}
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <TitleCardDetailSkill>Backend Development</TitleCardDetailSkill>
             <SkillWrap>
               {dataSkills.backend.map((item: any, idx: number) => (

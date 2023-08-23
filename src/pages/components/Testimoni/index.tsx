@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useContext } from "react";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -30,7 +31,15 @@ const Testimoni = () => {
   return (
     <TestimoniWrapper>
       <BoxContainer className="container">
-        <TitleTestimoni>Testimonial</TitleTestimoni>
+        <TitleTestimoni
+          as={motion.h2}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          Testimonial
+        </TitleTestimoni>
         <SliderCustom {...settings}>
           {dataTestimoni.map((data: any) => {
             return (

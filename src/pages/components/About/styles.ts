@@ -102,7 +102,7 @@ export const TitleCardAbout = styled.div`
   }
 `;
 
-export const DescCardAbout = styled.span`
+export const DescCardAbout = styled.p`
   font-size: 15px;
   color: #305c85;
   white-space: pre-wrap;

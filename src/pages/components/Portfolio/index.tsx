@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useContext } from "react";
 import { StoreContext } from "../../../services/context/Context";
 import {
@@ -19,10 +20,28 @@ const Portfolio = () => {
   return (
     <PortfolioWrapper id="portfolio">
       <BoxContainer className="container">
-        <TitlePortfolio>Portfolio</TitlePortfolio>
+        <TitlePortfolio
+          as={motion.h2}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          Portfolio
+        </TitlePortfolio>
         <BoxContent>
           {dataPortfolio.map((data: any, idx: number) => (
-            <CardPortfolio key={idx}>
+            <CardPortfolio
+              key={idx}
+              as={motion.div}
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: (0.6 * (idx + 1)) / dataPortfolio.length,
+                duration: 0.8,
+              }}
+              viewport={{ once: true }}
+            >
               <CardImagePortfolio>
                 <img src={data.image} alt="gambar 1" />
               </CardImagePortfolio>

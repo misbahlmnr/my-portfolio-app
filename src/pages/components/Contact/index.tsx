@@ -1,4 +1,5 @@
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 import React, { useRef } from "react";
 import {
   BoxContainer,
@@ -60,11 +61,29 @@ const Contact = () => {
   return (
     <ContactWrapper id="contact">
       <BoxContainer className="container">
-        <TitleContact>Contact</TitleContact>
+        <TitleContact
+          as={motion.h2}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          Contact
+        </TitleContact>
         <BoxContent>
           <BoxInfoWrap>
-            {datas.map((item: any) => (
-              <CardInfo key={item.title}>
+            {datas.map((item: any, idx: number) => (
+              <CardInfo
+                key={item.title}
+                as={motion.div}
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: (0.6 * (idx + 1)) / datas.length,
+                  duration: 0.8,
+                }}
+                viewport={{ once: true }}
+              >
                 {item.icon}
                 <TitleCardContact>{item.title}</TitleCardContact>
                 <SubtitleCardContact>{item.description}</SubtitleCardContact>
@@ -72,7 +91,15 @@ const Contact = () => {
               </CardInfo>
             ))}
           </BoxInfoWrap>
-          <FormWrapper ref={form} onSubmit={sendEmail}>
+          <FormWrapper
+            ref={form}
+            onSubmit={sendEmail}
+            as={motion.form}
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <div className="mb-3">
               <input
                 type="text"
