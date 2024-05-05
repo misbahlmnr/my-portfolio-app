@@ -51,7 +51,7 @@ const Hero = () => (
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
             className="btn"
-            href="https://drive.google.com/file/d/1nCHkbgPFnjDY4EIysL4tcE3XF2BqfuSw/view?usp=drive_link"
+            href="#"
           >
             <i className="uil uil-file-download"></i> MY CV
           </MyButton>
