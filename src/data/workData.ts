@@ -7,7 +7,7 @@ const workData = () => [
   {
     jurusan: "Frontend Developer",
     institusi: "Telkom University",
-    rangeWaktu: "September 2022 - Juny 2023",
+    rangeWaktu: "September 2022 - November 2022",
   },
   {
     jurusan: "Web Developer",
